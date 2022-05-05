@@ -1,2 +1,31 @@
+<label>Server Name</label>
+<!--Event Binding-->
+<!--<input type="text" class="form-control" (input)="onUpdateServerName($event)" />-->
+
+<!--Updates the variable using ngModel data binding -->
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<!--<p>{{ serverName }}</p>-->
+<button
+  class="btn btn-primary"
+  [disabled]="!allowNewServer"
+  (click)="onCreateServer()"
+>
+  Add Server
+</button>
+<!--Shows the state of the variable-->
+<!--<p [innerText]="allowNewServer"></p>-->
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
+
+<label>Enter Your UserName</label>
+<input type="text" class="form-control" [(ngModel)]="userName" />
+<!-- Can also set function in click: (click)="userName = ''"-->
+<button
+  class="btn btn-success"
+  [disabled]="!userName"
+  (click)="resetUserName()"
+>
+  Reset User
+</button>
+<p>Username is: {{ userName }}</p>

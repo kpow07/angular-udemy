@@ -1,0 +1,26 @@
+<label>Enter Your UserName</label>
+<input type="text" class="form-control" [(ngModel)]="userName" />
+<!--Can also set function in click: (click)="userName = ''"-->
+<button
+  class="btn btn-success"
+  [disabled]="!userName"
+  (click)="resetUserName()"
+>
+  Reset User
+</button>
+<p>Username is: {{ userName }}</p>
+<hr />
+<!--<button class="btn btn-primary" (click)="showSecret = !showSecret">-->
+<!--  Display Details-->
+<!--</button>-->
+<button class="btn btn-primary" (click)="onToggleDetails()">
+  Display Details
+</button>
+<p *ngIf="showSecret">Ruby is a dog.</p>
+<div
+  *ngFor="let click of clicks; let i = index"
+  [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'white-text': i >= 4 }"
+>
+  {{ click }}
+</div>
